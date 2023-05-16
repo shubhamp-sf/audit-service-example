@@ -4,7 +4,6 @@
 // https://opensource.org/licenses/MIT
 import dotenv from 'dotenv';
 import dotenvExt from 'dotenv-extended';
-import {ApplicationConfig, AuditExampleApplication} from './application';
 
 dotenv.config();
 dotenvExt.load({
@@ -12,6 +11,7 @@ dotenvExt.load({
   errorOnMissing: true,
   includeProcessEnv: true,
 });
+import {ApplicationConfig, AuditExampleApplication} from './application';
 
 export * from './application';
 
