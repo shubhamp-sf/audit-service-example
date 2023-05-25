@@ -3,13 +3,14 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 import {Constructor, Getter, inject} from '@loopback/core';
-import {DefaultCrudRepository, repository} from '@loopback/repository';
+import {repository} from '@loopback/repository';
+import {SequelizeCrudRepository} from '@loopback/sequelize';
 import {
   AuditDbSourceName,
   AuditLogRepository,
   AuditRepositoryMixin,
   IAuditMixinOptions,
-} from '@sourceloop/audit-log';
+} from '@sourceloop/audit-log/sequelize';
 import {AuthenticationBindings, IAuthUser} from 'loopback4-authentication';
 import {PgDataSource} from '../datasources';
 import {ToDo, ToDoWithRelations} from '../models';
@@ -24,9 +25,9 @@ export class ToDoRepository extends AuditRepositoryMixin<
   ToDoWithRelations,
   string | number,
   Constructor<
-    DefaultCrudRepository<ToDo, typeof ToDo.prototype.id, ToDoWithRelations>
+    SequelizeCrudRepository<ToDo, typeof ToDo.prototype.id, ToDoWithRelations>
   >
->(DefaultCrudRepository, todoAuditOpts) {
+>(SequelizeCrudRepository, todoAuditOpts) {
   constructor(
     @inject(`datasources.${AuditDbSourceName}`) dataSource: PgDataSource,
     @inject.getter(AuthenticationBindings.CURRENT_USER)

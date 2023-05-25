@@ -3,8 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
-import {juggler} from '@loopback/repository';
-import {AuditDbSourceName} from '@sourceloop/audit-log';
+import {SequelizeDataSource} from '@loopback/sequelize';
+import {AuditDbSourceName} from '@sourceloop/audit-log/sequelize';
 const config = {
   name: AuditDbSourceName,
   connector: 'postgresql',
@@ -22,7 +22,7 @@ const config = {
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
 export class PgDataSource
-  extends juggler.DataSource
+  extends SequelizeDataSource
   implements LifeCycleObserver
 {
   static dataSourceName = AuditDbSourceName;
