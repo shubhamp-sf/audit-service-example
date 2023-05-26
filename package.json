@@ -55,7 +55,7 @@
     "@loopback/rest-explorer": "^5.0.5",
     "@loopback/sequelize": "^0.2.0",
     "@loopback/service-proxy": "^5.0.5",
-    "@sourceloop/audit-log": "file:../../sourcefuse/loopback4-audit-log/sourceloop-audit-log-5.0.0.tgz",
+    "@sourceloop/audit-log": "^5.1.0",
     "@sourceloop/audit-service": "file:../../sourcefuse/loopback4-microservice-catalog/services/audit-service/sourceloop-audit-service-5.2.18.tgz",
     "@sourceloop/core": "^7.4.3",
     "ajv": "^8.11.0",
