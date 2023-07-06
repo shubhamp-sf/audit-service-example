@@ -20,7 +20,7 @@ import {
   put,
   requestBody,
 } from '@loopback/rest';
-import {AuditLogRepository} from '@sourceloop/audit-service/sequelize';
+import {AuditLogRepository} from '@sourceloop/audit-service';
 import {
   CONTENT_TYPE,
   OPERATION_SECURITY_SPEC,

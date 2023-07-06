@@ -11,7 +11,7 @@ import {
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
-import {AuditServiceComponent} from '@sourceloop/audit-service/sequelize';
+import {AuditServiceComponent} from '@sourceloop/audit-service';
 import * as path from 'path';
 import {MySequence} from './sequence';
 
